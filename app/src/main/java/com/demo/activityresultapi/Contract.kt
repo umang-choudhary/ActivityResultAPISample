@@ -5,12 +5,16 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
 
-class Contract : ActivityResultContract<String, String>() {
+class Contract : ActivityResultContract<Intent, String>() {
 
-    override fun createIntent(context: Context, input: String): Intent {
+    /*override fun createIntent(context: Context, input: String): Intent {
         val intent = Intent(context, ResultTwoActivity::class.java)
         intent.putExtra("Input", input)
         return intent
+    }*/
+
+    override fun createIntent(context: Context, input: Intent): Intent {
+        return input
     }
 
     override fun parseResult(resultCode: Int, intent: Intent?): String {

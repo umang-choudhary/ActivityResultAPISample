@@ -44,7 +44,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnResult2.setOnClickListener {
-            activityLauncher.launch("Important Data")
+            val intent = Intent(this@MainActivity, ResultTwoActivity::class.java)
+            intent.putExtra("Input", "Important Data")
+            activityLauncher.launch(intent)
+            //activityLauncher.launch("Important Data")
         }
 
         binding.btnLoadPicture.setOnClickListener {
