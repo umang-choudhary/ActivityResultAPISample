@@ -18,8 +18,8 @@ class MyCustomContract : ActivityResultContract<Intent, User>() {
     }
 
     override fun parseResult(resultCode: Int, intent: Intent?): User {
-        var name: String? = ""
-        var email: String? = ""
+        val name: String?
+        val email: String?
         val user = User("", "")
 
         if (resultCode == RESULT_OK && intent != null) {

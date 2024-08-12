@@ -26,10 +26,12 @@ class HomeActivity : AppCompatActivity() {
         setContentView(view)
 
         /*
+        -> Google strongly recommends using the Activity Result APIs introduced in AndroidX Activity and Fragment classes.
+        -> Activity Result APIs provide a registerForActivityResult() method for registering the result callback,
         registerForActivityResult() takes an ActivityResultContract and an ActivityResultCallback and
         returns an ActivityResultLauncher, which you use to launch the other activity.
-        While ActivityResultContracts contains a number of prebuilt ActivityResultContract classes for use,
-        you can provide your own custom contracts that provide the precise type-safe API you need.
+        -> While ActivityResultContracts contains a number of prebuilt ActivityResultContract classes for use.
+        -> You can provide your own custom contracts that provide the precise type-safe API you need.
         */
         profileLauncher = registerForActivityResult(MyCustomContract()) { user ->
             binding.tvName.text = user.name
