@@ -25,6 +25,12 @@ class HomeActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        /*
+        registerForActivityResult() takes an ActivityResultContract and an ActivityResultCallback and
+        returns an ActivityResultLauncher, which you use to launch the other activity.
+        While ActivityResultContracts contains a number of prebuilt ActivityResultContract classes for use,
+        you can provide your own custom contracts that provide the precise type-safe API you need.
+        */
         profileLauncher = registerForActivityResult(MyCustomContract()) { user ->
             binding.tvName.text = user.name
             binding.tvEmail.text = user.email
