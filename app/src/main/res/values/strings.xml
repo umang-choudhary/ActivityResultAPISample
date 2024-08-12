@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">ActivityResultAPISample</string>
+    <string name="full_name">Full Name</string>
+    <string name="set_name_here">Set Name Here</string>
+    <string name="email_id">Email ID</string>
+    <string name="set_email_here">Set Email Here</string>
+    <string name="permanent_address">Permanent Address</string>
+    <string name="set_address_here">Set Address Here</string>
+    <string name="load_picture">Load Picture</string>
+    <string name="header">Header</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="submit">SUBMIT</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
 </resources>

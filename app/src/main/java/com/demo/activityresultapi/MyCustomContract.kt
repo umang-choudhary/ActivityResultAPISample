@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
 
-class Contract : ActivityResultContract<Intent, String>() {
+class MyCustomContract : ActivityResultContract<Intent, User>() {
 
     /*override fun createIntent(context: Context, input: String): Intent {
         val intent = Intent(context, ResultTwoActivity::class.java)
@@ -17,11 +17,18 @@ class Contract : ActivityResultContract<Intent, String>() {
         return input
     }
 
-    override fun parseResult(resultCode: Int, intent: Intent?): String {
-        var result: String? = ""
-        if (resultCode == RESULT_OK) {
-            result = intent?.getStringExtra("Output")
+    override fun parseResult(resultCode: Int, intent: Intent?): User {
+        var name: String? = ""
+        var email: String? = ""
+        val user = User("", "")
+
+        if (resultCode == RESULT_OK && intent != null) {
+            name = intent.getStringExtra("Name")
+            email = intent.getStringExtra("Email")
+
+            user.name = name
+            user.email = email
         }
-        return result!!
+        return user
     }
 }
